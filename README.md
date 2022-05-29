@@ -1,0 +1,2 @@
+# Unit-Step-Responses-and-Unit-Ramp
+Consider the closed-loop control system as shown in the block diagram in Figure 2. Write a  MATLAB-Simulink program to simulate and obtain the unit-step responses and unit-ramp  responses of the system. Plot 𝑥1 (𝑡) vs. 𝑡, 𝑥2 (𝑡) vs. 𝑡, 𝑥3 (𝑡) vs. 𝑡, and 𝑒(𝑡) vs. 𝑡 (where 𝑒 𝑡 = 𝑟 𝑡 −𝑥1 (𝑡)) for the unit-step responses and the unit-ramp responses. Please remember to label  the axes and title the plots. 
