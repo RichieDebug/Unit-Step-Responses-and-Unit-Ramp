@@ -1,0 +1,50 @@
+%%
+% Lam, Richard - 012358411 - HW2,Problem 2 - 04/05/2022
+%
+% Description: This script simulates a unit step and unit step function.
+
+clear; clc; close all; % Clears the workspace and command window.
+%%
+t0 = 0;
+ti = 0.01;
+tf = 10;
+dt = 1E-2;
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Call Simulink Block Diagram%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+open_system('Unit_Step_Response.slx')
+ansSTEP = sim('Unit_Step_Response.slx');
+
+open_system('Unit_Ramp_Response.slx')
+ansRAMP = sim('Unit_Ramp_Response.slx');
+%%
+%%%%%%%%%%%%%%%%%%%%%
+%Plot UNIT STEP data%
+%%%%%%%%%%%%%%%%%%%%%
+hold all % This is so each plot is actually gets plotted instead of overriding each other. 
+
+figure (1);
+subplot(2,2,1);
+plot(ansSTEP.x1_unit(:,1),ansSTEP.x1_unit(:,2));
+title('x1(t) vs. time - Unit Step');
+xlabel('Time (s)');
+ylabel('Amplitude');
+
+subplot(2,2,2);
+plot(ansSTEP.x2_unit(:,1),ansSTEP.x2_unit(:,2));
+title('x2(t) vs. time - Unit Step');
+xlabel('Time (s)');
+ylabel('Amplitude');
+
+subplot(2,2,3);
+plot(ansSTEP.x3_unit(:,1),ansSTEP.x3_unit(:,2));
+title('x3(t) vs. time - Unit Step');
+xlabel('Time (s)');
+ylabel('Amplitude');
+
+subplot(2,2,4);
+plot(ansSTEP.e_unit(:,1),ansSTEP.e_unit(:,2));
+title('e(t) vs. time - Unit Step');
+xlabel('Time (s)');
+ylabel('Amplitude');
